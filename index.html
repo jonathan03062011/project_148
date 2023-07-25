@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color:white">
+        <a-camera look-controls-enabled wasd-controls-enabled position="0 5 15">
+        </a-camera>
+
+        <a-assets>
+            <a-asset-item id="boy" src="./assets/boy/scene.gltf"></a-asset-item>
+            <a-asset-item id="streetlamp" src="./assets/streetLamp/scene.gltf"></a-asset-item>
+            <a-asset-item id="bench" src="./assets/bench/scene.gltf"></a-asset-item>
+            <a-asset-item id="cat" src="./assets/cat/scene.gltf"></a-asset-item>
+            <img id="bg" src="./assets/background.jpg">
+        </a-assets>
+
+        <a-sky color="#2a281e"></a-sky>
+
+        <a-box id="background-scene" src="#bg" position="0 12.48 -3.5" width="30" height="25">
+        </a-box>
+
+        <a-entity shadow="receive:true;">
+            <a-entity scale="0.02 0.04 0.03" gltf-model="#street" position="0 0 -1" rotation="0 90 0"></a-entity>
+
+            <a-entity light="type: point; castShadow: true; intensity: 3; color:yellow" position="-8 10 2">
+            </a-entity>
+        </a-entity>
+        </a-entity>
+        <a-entity light="type: ambient;"> </a-entity>
+
+      <a-entity
+        scale="0.05 0.05 0.05"
+        gltf-model="#boy"
+        position="-2 1.2 3"
+        shadow="cast:true;"
+      ></a-entity>
+
+        <a-entity scale="2.5 1.5 1.5" gltf-model="#bench" position="2 0 3" shadow="cast: true;"></a-entity>
+
+        <a-entity scale="0.03 0.03 0.03" gltf-model="#cat" position="2 2 2" shadow="cast: true;"  rotation="0 270 0"></a-entity>
+
+        <a-entity position="-6 0.4 1" scale="0.5 0.5 0.4" gltf-model="#lamp" shadow="cast: true;">
+        </a-entity>
+    </a-scene>
+</body>
+
+</html>
